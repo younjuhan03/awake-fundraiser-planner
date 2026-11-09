@@ -1,0 +1,10 @@
+{
+  "revenue": 496.0,
+  "fundraiser_expenses": 261.46,
+  "computed_net": 234.54,
+  "ledger_memo_net": 261.13,
+  "unexplained_difference": 26.59,
+  "parking_fine": 75.0,
+  "net_with_parking_fine": 159.54,
+  "memo_net_vs_expenses_gap": -0.33
+}

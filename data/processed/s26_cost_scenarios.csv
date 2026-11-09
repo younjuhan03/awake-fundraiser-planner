@@ -1,0 +1,5 @@
+scenario,name,unit_cost_usd,confidence,source,contribution_per_item_at_avg_price,contribution_per_item_at_pair_price,contribution_margin_pct
+A,S25 all-in cost per item,1.7592592592592593,assumed,"S25 $190.00 / 108 items purchased (ingredients + supplies, ramen menu); applying it to S26 is assumed",1.8465099715099715,1.7407407407407407,0.5120987654320988
+B,Memo low: ingredients + supplies allowance,0.78,assumed,Memo Maxim coffee $0.39 + supplies allowance (allowance is an assumption),2.8257692307692306,2.7199999999999998,0.7836799999999999
+C,Memo high: ingredients + supplies allowance,0.99,assumed,Memo brookie $0.60 + supplies allowance (allowance is an assumption),2.6157692307692306,2.51,0.72544
+D,Conservative high-cost stress test,2.638888888888889,assumed,S25 all-in x multiplier (multiplier is a judgment call),0.966880341880342,0.8611111111111112,0.2681481481481482

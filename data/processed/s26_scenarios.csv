@@ -1,0 +1,5 @@
+scenario,name,unit_cost_usd,cost_confidence,cost_pre_orders_only,net_pre_orders_only,margin_pre_orders_only,production_with_buffer,net_buffer_worst,net_buffer_expected,net_buffer_best
+A,S25 all-in cost per item,1.7592592592592593,assumed,182.96296296296296,192.03703703703704,0.5120987654320988,115,172.6851851851852,191.9351851851852,211.1851851851852
+B,Memo low: ingredients + supplies allowance,0.78,assumed,81.12,293.88,0.78368,115,285.3,304.55,323.8
+C,Memo high: ingredients + supplies allowance,0.99,assumed,102.96,272.04,0.7254400000000001,115,261.15,280.4,299.65
+D,Conservative high-cost stress test,2.638888888888889,assumed,274.44444444444446,100.55555555555554,0.26814814814814814,115,71.52777777777777,90.77777777777777,110.02777777777777

@@ -1,0 +1,4 @@
+event_id,label,status,ledger_memo_net_usd,revenue_usd,cost_usd,unplanned_usd,units_purchased,net_usd,margin,net_incl_unplanned_usd,tag
+F24,Fall 2024 fundraiser,observed,261.13,496.0,261.46,75.0,0,234.54,0.47286290322580643,159.54,observed (net = derived)
+S25,Spring 2025 fundraiser (ramen),observed,,372.0,190.0,0.0,108,182.0,0.489247311827957,182.0,observed (net = derived)
+S26,Spring 2026 fundraiser (pre-order),partial,,0.0,0.0,0.0,0,0.0,,0.0,no cost data

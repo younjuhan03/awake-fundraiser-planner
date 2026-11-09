@@ -1,0 +1,17 @@
+txn_id,date,amount_usd,description,event_id,category,units_purchased
+1,2024-10-26,-24.34,Fundraiser market research (HEB),F24,market_research,
+2,2024-10-26,-3.99,Fundraiser market research (H Mart),F24,market_research,
+3,2024-11-09,-47.88,Sesame sticks x12 (H Mart),F24,ingredients,
+4,2024-11-09,-15.96,Sesame sticks x4 (H Mart),F24,ingredients,
+5,2024-11-09,-111.53,Fundraiser supplies (HEB),F24,ingredients,
+6,2024-11-11,496.0,Fundraiser income (ledger memo says net profit $261.13),F24,revenue,
+7,2024-11-11,-12.0,Fundraiser printing,F24,printing,
+8,2024-11-11,-32.0,Fundraiser printing,F24,printing,
+9,2024-11-11,-13.76,Fundraiser supplies (HEB),F24,ingredients,
+10,2024-11-11,-75.0,"Parking fine on fundraiser day (ledger: unplanned expense, not fundraiser expense)",F24,unplanned,
+11,2025-02-13,-49.44,"Ramen: 12 Shin, 12 Buldak, 12 Carbo",S25,ingredients,36
+12,2025-02-16,-43.62,"Ramen: 24 Carbo, 6 Buldak",S25,ingredients,30
+13,2025-02-25,-40.5,"Ramen: 18 Buldak, 12 Shin",S25,ingredients,30
+14,2025-02-25,-14.76,Ramen: 12 Shin,S25,ingredients,12
+15,2025-03-10,-41.68,"Supplies: chopsticks, aluminum foil, ice, forks, markers",S25,supplies,
+16,2025-03-10,372.0,Fundraiser income,S25,revenue,

@@ -1,0 +1,17 @@
+metric,value,tag
+S26 pre-orders,29 orders / 104 items / $375,observed
+F24 revenue,$496.00,observed
+F24 fundraiser costs,$261.46,observed
+F24 net (computed),$234.54  (47.3% margin),derived
+F24 net (ledger memo),$261.13  (unresolved +$26.59),observed (memo)
+F24 net incl. parking fine,$159.54,derived
+S25 revenue / cost / net,$372.00 / $190.00 / $182.00  (48.9% margin),observed / observed / derived
+S25 all-in cost per item purchased,$1.76,derived
+S25 revenue per item purchased,$3.44,derived
+S26 avg price per item (pre-orders),$3.61,derived
+Largest S26 order share (units / revenue),26.9% / 26.7%,derived
+S26 HHI units (all / without largest),0.097 / 0.045,derived
+S26 orders placed on day 1 (Feb 26),"44.8% of orders, 29.8% of items",derived
+S26 orders on Mar 2-3,"12 orders (41.4%), 59 items (56.7%)",derived
+"S26 net, pre-orders only (range across cost scenarios)",$101 to $294,estimate
+"S26 net with assumed 10% buffer (range, worst to best)",$72 to $324,estimate

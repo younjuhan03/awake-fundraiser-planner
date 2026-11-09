@@ -1,0 +1,4 @@
+event_id,label,semester,event_date,status,notes,ledger_memo_net_usd
+F24,Fall 2024 fundraiser,Fall 2024,2024-11-11,observed,Ledger date of income; purchases from 2024-10-26,261.13
+S25,Spring 2025 fundraiser (ramen),Spring 2025,2025-03-10,observed,Ledger date of income,
+S26,Spring 2026 fundraiser (pre-order),Spring 2026,,partial,"Pre-order form only; costs, units produced and leftovers NOT recorded; menu not recorded",

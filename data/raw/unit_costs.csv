@@ -1,0 +1,6 @@
+item,cost_usd,pack_size,unit_cost_usd,source,confidence,note
+Brookie batch (20 pieces),12.00,20,0.60,Planning memo recipe costing (Great Value/Walmart prices),derived,"Sum of listed ingredients is approx $11.75; memo rounds to approx $12.00"
+Kanu coffee,15.49,30,0.52,Planning memo,derived,per $15.49 / 30
+Maxim coffee,7.79,20,0.39,Planning memo,derived,per $7.79 / 20
+Lotus topping,,,,Not recorded,unknown,Open item
+Oreo topping,,,,Not recorded,unknown,Open item

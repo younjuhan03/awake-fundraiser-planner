@@ -1,0 +1,106 @@
+# Planner defaults. Every entry: value, source, confidence (observed | derived | assumed), note.
+# observed = read directly from the data; derived = calculated from observed data (formula in note/source);
+# assumed = a judgment call, NOT a fact. Change assumed values freely.
+
+preorder_units:
+  value: 104
+  source: "S26 pre-order form, sum of quantity over 29 orders (data/raw/orders.csv)"
+  confidence: observed
+  note: "Default for the planner so it reproduces S26. Replace with the current form total."
+
+preorder_revenue_usd:
+  value: 375.00
+  source: "S26 pre-order form, sum of amount_usd over 29 orders"
+  confidence: observed
+  note: "Amount quoted on the form; payment confirmed for all 29 orders."
+
+preorder_avg_price_usd:
+  value: 3.6058
+  source: "375 / 104 (S26 pre-orders)"
+  confidence: derived
+  note: "Blended price per item across the observed schedule, incl. the single 28-item order."
+
+walkup_price_usd:
+  value: 3.50
+  source: "Observed order price $7 for 2 items (most common order: 17 of 29 orders paid $7 for 2); extended per item"
+  confidence: assumed
+  note: "Walk-up pricing was never recorded. $3.50 is a guess based on the $7-for-2 order price."
+
+walkup_buffer_pct:
+  value: 0.10
+  source: "No data. Units cooked and leftovers were never recorded."
+  confidence: assumed
+  note: "Extra items cooked beyond pre-orders, as a fraction of pre-order units. 0 = cook exactly the pre-orders."
+
+walkup_sellthrough_pct:
+  value: 0.50
+  source: "No data. Walk-up sales and leftovers were never recorded."
+  confidence: assumed
+  note: "Share of the buffer items that sell to walk-ups. Midpoint placeholder; the planner also shows 0% and 100%."
+
+unit_cost_usd:
+  value: 1.7592592592592593
+  source: "S25 all-in cost per item: $190.00 / 108 items purchased"
+  confidence: assumed
+  note: "Ingredients + supplies for the ramen menu. Counts items PURCHASED, not sold. The S26 menu is unrecorded, so this may not apply to it."
+
+fixed_costs_usd:
+  value: 0.00
+  source: "Default 0 because the S25 all-in unit cost already includes supplies"
+  confidence: assumed
+  note: "If you use a unit cost that covers ingredients only, add printing and supplies here (F24 printing was $44.00; S25 supplies were $41.68)."
+
+s25_all_in_unit_cost_usd:
+  value: 1.7592592592592593
+  source: "190.00 / 108 (S25 transactions)"
+  confidence: derived
+  note: "Cost scenario A for S26."
+
+memo_ingredient_cost_low_usd:
+  value: 0.39
+  source: "Planning memo: Maxim coffee, $7.79 per 20"
+  confidence: derived
+  note: "Lowest per-item ingredient cost in the memo. Memo semester unconfirmed."
+
+memo_ingredient_cost_high_usd:
+  value: 0.60
+  source: "Planning memo: brookie batch ~$12.00 / 20 pieces"
+  confidence: derived
+  note: "Highest per-item ingredient cost in the memo. Memo itemizes ingredients summing to $11.75, rounded to ~$12.00. Lotus and Oreo toppings are not costed."
+
+supplies_allowance_per_item_usd:
+  value: 0.39
+  source: "S25 supplies $41.68 / 108 items = $0.386"
+  confidence: assumed
+  note: "Packaging/supplies (cups, ice, utensils) added to the memo costs. Taken from S25 supplies per item; a dessert + coffee menu may differ. The memo itself did not cost cups or ice."
+
+conservative_cost_multiplier:
+  value: 1.5
+  source: "Judgment call"
+  confidence: assumed
+  note: "Conservative high-cost case = S25 all-in cost x this multiplier. No data supports the 1.5; it is a stress test."
+
+unplanned_reserve_usd:
+  value: 75.00
+  source: "F24 parking fine on fundraiser day (one observation)"
+  confidence: derived
+  note: "Optional line for unplanned one-off costs. Observed in only 1 of 2 events with cost data."
+
+price_fallback_per_item_usd:
+  value: 3.50
+  source: "Same basis as walkup_price_usd ($7 for 2 items)"
+  confidence: assumed
+  note: "Per-item quote for order sizes never observed in the S26 form."
+
+# Observed S26 price schedule (quantity -> amount). Modal amount per quantity; see data_issues.md.
+price_schedule:
+  source: "S26 pre-order form, modal amount per quantity (checked by tests against data/raw/orders.csv)"
+  confidence: observed
+  note: "1->$7 may reflect a 2-item minimum or bundle price (intent unknown). 4->$14 observed 3 times, $15 once. 28->$100 is a single order."
+  table:
+    1: 7
+    2: 7
+    3: 11
+    4: 14
+    6: 21
+    28: 100

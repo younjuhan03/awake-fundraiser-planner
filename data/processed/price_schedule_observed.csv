@@ -1,0 +1,7 @@
+quantity,modal_amount_usd,n_orders,price_per_item_usd,flag
+1,7.0,2,7.0,1 item costs the same as 2 (minimum order or bundle price? intent unknown)
+2,7.0,17,3.5,
+3,11.0,2,3.6667,$3.67/item; not a multiple of $3.50
+4,14.0,4,3.5,inconsistent: also seen $15 x1
+6,21.0,3,3.5,
+28,100.0,1,3.5714,"single order; $3.57/item vs $3.50/item for 2, 4, 6 items"
