@@ -65,8 +65,8 @@ if page == "Project Overview":
     k3.metric("Pre-order revenue (observed)", "$375")
     st.subheader("My role and the project's scope")
     st.markdown("As AWAKE's Finance/Social Leader, I introduced an online pre-order form with day-of pickup. "
-                "The source project reports that subsequent leaders continued the process. "
-                "This retrospective project uses the available records to build a reusable planning tool; "
+                "Subsequent leaders continued the pre-order process after I left. "
+                "I use the available records to develop a reusable planning tool; "
                 "adoption of the pre-order process does not establish adoption or impact of this app.")
     st.subheader("The decision: how much extra food should we make?")
     st.markdown("At a proxy cost of **$190 / 108 = $1.76 per item** and an assumed walk-up price of "
@@ -90,8 +90,7 @@ if page == "Project Overview":
                 "Streamlit and spreadsheet handoff. Two costed events are insufficient for a credible demand model. "
                 "For the next event, record production, walk-up sales, leftovers, receipts, and preparation hours; "
                 "compare the planned and realized outcomes before claiming impact.")
-    st.caption("Built with AI coding assistance, including Claude. The reproducible calculations and data notes "
-               "support review; the applicant should be able to explain and defend every submitted claim.")
+    st.caption("My calculations, assumptions and development notes are documented in the repository README.")
     workbook = PROJECT_ROOT / "exports/fundraiser_planner.xlsx"
     if workbook.exists():
         st.download_button("Download the spreadsheet planner", workbook.read_bytes(),

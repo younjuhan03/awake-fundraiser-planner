@@ -1,108 +1,52 @@
 # AWAKE Fundraiser Planner
+### How much extra food should we make beyond confirmed pre-orders?
 
-**From pre-orders to a defensible production plan.** An applied analytics case study by Juhan Youn using actual student organization records.
+**My finding:** under a historical cost proxy and an assumed $3.50 walk-up price, an extra item needs about 50.3% sell-through to cover its cost. At 50% sell-through, a 10% production buffer adds almost no net proceeds.
 
-## Start here
+As AWAKE's Finance/Social Leader, I introduced online pre-orders with day-of pickup to make food production easier to plan. Subsequent leaders continued that process after I left. I later used the available financial and order records to develop a reusable scenario planner.
 
-- Open **[index.html](index.html)** for the admissions-facing case study and interactive calculator. No installation or internet connection is required.
-- Read **[the case study](docs/case_study.md)** for the role, method, conclusions and limits.
-- Use **[the spreadsheet](exports/fundraiser_planner.xlsx)** for formula-based planning.
-- Run **Streamlit** for historical event P&L, demand, the planner and data notes.
+**Explore:** [interactive case study](index.html) · [spreadsheet planner](exports/fundraiser_planner.xlsx) · [my analysis](docs/case_study.md) · [calculation notes](docs/technical_notes.md)
 
-## Context and ownership
+## The production decision
 
-As AWAKE's Finance/Social Leader, I introduced online pre-orders with day-of pickup to make food production easier to plan. The original project account reports continued use of that process by subsequent leaders.
+Spring 2026 recorded **29 pre-orders, 104 items and $375 revenue**. A 10% buffer rounds production up to 115 items, leaving 11 extra items to sell.
 
-This later, retrospective project adds a planning tool using three semesters of records. The operational change and this newly built tool are distinct. Continued use of pre-orders does not establish adoption of this app. Recorded production and leftovers are missing, so the available data cannot quantify waste reduction or establish causal profit improvement.
-
-Development used AI coding assistance, including Claude. Calculations and data notes support review; the applicant must understand and defend the code and claims. The presence of code does not by itself establish independent technical proficiency.
-
-## Main decision
-
-At a historical cost proxy of $190 / 108 items purchased and an assumed $3.50 walk-up price, an extra item requires **50.3% sell-through** to break even. Applying an earlier menu's cost to S26 is an assumption.
-
-A 10% buffer on 104 pre-orders rounds production up to 115: **11 extra items**. Relative to producing exactly 104:
-
-| Buffer sell-through | Incremental net (scenario) |
+| Assumed extra-item sell-through | Net change vs. producing only pre-orders |
 |---|---:|
 | 0% | -$19.35 |
-| 50% chosen input | -$0.10 |
+| 50% | -$0.10 |
 | 100% | +$19.15 |
 
-Start from confirmed orders; choose a buffer after checking current costs, capacity and acceptable downside. The tool evaluates a chosen buffer. It does not optimize quantity or price, or forecast demand.
+I use the S25 cost of $190 / 108 purchased items as a proxy. Applying that earlier menu's cost to S26 and choosing a $3.50 walk-up price are assumptions. These figures evaluate a plan; they are not observed S26 profit or a demand forecast.
 
-## Evidence
+## My analytical decisions
 
-| Source | Result | Status |
-|---|---|---|
-| F24 transactions | $496 revenue, $261.46 fundraiser cost, $234.54 net | Revenue/cost observed; net derived |
-| S25 transactions | $372 revenue, $190 cost, $182 net | Revenue/cost observed; net derived |
-| S26 order form | 29 orders, 104 items, $375 | Observed; costs and actual production unknown |
-| Largest S26 order | 28 items, $100; 26.9% of units, 26.7% of revenue | Derived |
-| S26 profit | About $101–$294 if exactly 104 were cooked, across four cost cases | Scenario range, not realized profit or confidence interval |
+- **Start with committed demand.** I compare each buffer with producing exactly the confirmed pre-orders, so the extra quantity's cost and upside remain visible.
+- **Charge for everything produced.** An unsold item still incurs cost. I use `extra quantity × (sell-through × price − unit cost)` to explain the buffer's incremental value.
+- **Reconcile before interpreting.** F24 transactions yield $234.54 net while the memo reports $261.13. I retain the unresolved $26.59 difference and use the reproducible transaction total as my primary figure.
+- **Match the method to the evidence.** With only two costed events and one pre-order event, I use scenarios rather than fit a demand model that the records cannot support.
 
-F24's memo reports $261.13 net, leaving an unresolved $26.59 difference. The primary result uses the transactions. Including a separately classified $75 parking fine reduces net to $159.54. See [data_issues.md](data_issues.md).
+## What I want to study next
 
-## Sources and privacy
+I want to turn operating experience into decisions that can be evaluated: how should cash limits, volunteer capacity and uncertain demand determine a production plan? The next event would let me compare planned and actual production, costs, leftovers and net proceeds. This connects my economics and statistics background to optimization and decision evaluation in business analytics.
 
-| Source | Included files |
-|---|---|
-| 2024–25 account book, 16 transactions and budget table | `data/raw/transactions.csv`, `ledger_budget.csv` |
-| Planning memo, semester unconfirmed | `unit_costs.csv`, `brookie_ingredients.csv` |
-| S26 pre-orders | `data/raw/orders.csv` |
+## Methods and records
 
-The original screenshots are not included. Hand-transcribed CSV totals are internally checked, not independently audited row by row. Participant names and contact details are omitted. Pseudonymous IDs, timestamps and amounts remain, so the raw order file is not guaranteed anonymous against outside information. The case study displays aggregates; its narrative names only the project author.
+My workflow connects transcribed CSVs, SQLite reconciliation, Python scenario calculations, sensitivity checks, Streamlit and Excel.
 
-## Method
+- [Source notes and unresolved issues](data_issues.md)
+- [Methods, formulas and local setup](docs/technical_notes.md)
+- [My analytical decision log](docs/SUBMISSION_NOTES_KO.md)
+- [Software validation](docs/validation.md) · [leader handoff](docs/leader_brief.md)
 
-CSV → SQLite and named SQL queries → reconciliation, P&L, concentration and timing → pure Python scenario evaluation → Streamlit, figures and Excel.
+Participant names and contact details are omitted. The public order file retains pseudonymous IDs, timestamps and amounts; the case study displays aggregates.
 
-- Production = `ceil(preorder_units * (1 + buffer))`, guarding against floating-point noise.
-- Extra quantity = production − pre-orders.
-- Scenario walk-up sales = extra quantity × chosen sell-through. Fractions are scenario averages.
-- Revenue = pre-order revenue + scenario walk-up sales × assumed walk-up price.
-- Cost = production × unit cost + fixed costs. Every cooked item incurs cost.
-- Net = revenue − cost.
-- Incremental buffer net = extra quantity × (sell-through × walk-up price − unit cost).
-- Extra-item break-even sell-through = unit cost / walk-up price, when price is positive.
-- Total cost break-even counts pre-orders at their average price first, then walk-ups. This is an accounting threshold at a fixed production quantity, not payment timing.
+## Boundaries of my conclusion
 
-The 0% / chosen / 100% cases vary walk-up sales only. They do not bound cost overruns, cancellations or spoilage, and have no estimated probabilities. Internal keys such as `expected` and `net_buffer_expected` are retained for compatibility and mean **the user-chosen scenario**, not statistical expected value.
+Historical production, leftovers, walk-up sales and S26 costs are missing. I cannot calculate a recorded waste-reduction rate or realized S26 profit. The pre-order process and the later planner are separate developments; I have not measured an operational impact from deploying the planner. Its 0%, chosen and 100% sell-through cases hold costs and pre-order fulfillment fixed.
 
-S25 unit cost uses items **purchased**, not sold. Memo cases add an assumed $0.39 supplies allowance to $0.39 or $0.60 ingredients; menu and semester are unconfirmed. The 1.5× stress test is a judgment call. Even zero-buffer S26 net depends on assumed cost. Avoid double-counting supplies already included in all-in unit cost.
+The HTML page opens after downloading; GitHub displays its source. The spreadsheet and full local app provide additional ways to inspect the calculations.
 
-## Run locally
+## Development note
 
-From this directory, in PowerShell (Python 3.12+ intended):
-
-```powershell
-pip install -r requirements.txt
-$env:PYTHONPATH="src"
-python -m awake.build
-python -m pytest -q
-streamlit run app.py
-```
-
-On Bash, use `export PYTHONPATH=src`. The static `index.html` opens directly; optional serving: `python -m http.server 8765`.
-
-The build recreates SQLite, CSV/JSON tables, figures and the spreadsheet. Missing spreadsheet dependencies fail explicitly instead of silently retaining an old export. See [validation.md](docs/validation.md) for checks and limits.
-
-## Limitations and next validation
-
-Two costed events and one pre-order event do not support a reliable demand model. Menus and semesters differ, so they are not a comparable causal before/after design. Price anomalies are preserved. The single average unit cost assumes linear, interchangeable items: recipe batches, menu mix, capacity and discounts are not modeled.
-
-Next event: record costs, actual production, fulfillment, walk-up sales/revenue, leftovers and preparation hours. Register the plan before the event and compare with actuals before claiming impact. Data collection is proposed, not completed.
-
-## Project map
-
-| Location | Purpose |
-|---|---|
-| `index.html` | Case study + browser calculator |
-| `app.py` | Streamlit overview and analytical pages |
-| `src/awake/` | Planner, analysis, figures, spreadsheet generator, build |
-| `config/assumptions.yaml` | Defaults with provenance |
-| `data/raw/`, `sql/` | Transcribed records, schema and queries |
-| `docs/` | Case study, review, figures and validation |
-| `tests/` | Data, planner, Streamlit and formula checks |
-
-This is a project handoff; a localhost address is not a submission URL. A static page can be published separately from order-level source files. See [submission notes](docs/SUBMISSION_NOTES_KO.md).
+I used AI tools to support project development, including code and documentation.

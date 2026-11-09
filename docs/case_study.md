@@ -4,9 +4,9 @@
 
 ## Context and role
 
-AWAKE's food fundraisers required leaders to commit money and volunteer effort before knowing walk-up demand. As Finance/Social Leader, I introduced online pre-orders with day-of pickup to improve production planning. The original project account reports that later leaders continued the process.
+AWAKE's food fundraisers required leaders to commit money and volunteer effort before knowing walk-up demand. As Finance/Social Leader, I introduced online pre-orders with day-of pickup to improve production planning. Later leaders continued the pre-order process after I left.
 
-This retrospective project analyzes available records and adds a reusable planner. It does not establish that the app was used in an event. My operating experience provides the problem context; the records support a more limited set of analytical conclusions.
+I developed this planner after introducing the pre-order process. My goal was to turn the records into a transparent comparison of production choices, with each conclusion tied to either recorded data or an explicit assumption.
 
 ## Evidence and method
 
@@ -34,4 +34,4 @@ Next validation: record actual costs, production, fulfillment, walk-up sales, le
 
 The most useful output was a decision threshold and a clearer measurement plan. This experience connects my economics and statistics background to a question I want to study more deeply: how to turn imperfect analytical evidence into decisions under operational constraints, then evaluate whether those decisions improved the outcome.
 
-**Development disclosure:** built with AI coding assistance, including Claude. The applicant is responsible for understanding and defending the submitted analysis and implementation.
+[Methods, source notes and development details](../README.md).
