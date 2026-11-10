@@ -36,9 +36,9 @@ I use the S25 cost of $190 / 108 purchased items as a proxy. Applying that earli
 - **Reconcile before interpreting.** F24 transactions yield $234.54 net while the memo reports $261.13. I retain the unresolved $26.59 difference and use the reproducible transaction total as my primary figure.
 - **Match the method to the evidence.** With only two costed events and one pre-order event, I use scenarios rather than fit a demand model that the records cannot support.
 
-## What I want to study next
+## What I learned and want to deepen
 
-I want to turn operating experience into decisions that can be evaluated: how should cash limits, volunteer capacity and uncertain demand determine a production plan? The next event would let me compare planned and actual production, costs, leftovers and net proceeds. This connects my economics and statistics background to optimization and decision evaluation in business analytics.
+I learned how confirmed pre-orders can anchor a production decision and how unit costs change the value of making extra food. My records supported transparent scenarios, but they did not give me enough evidence to estimate uncertain walk-up demand. I want to study demand estimation and constrained optimization more deeply, so I can connect cash limits, volunteer capacity and the risk of leftovers to a production plan I can evaluate.
 
 ## My next validation step
 
