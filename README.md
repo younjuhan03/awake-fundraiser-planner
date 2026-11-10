@@ -40,6 +40,10 @@ I use the S25 cost of $190 / 108 purchased items as a proxy. Applying that earli
 
 I want to turn operating experience into decisions that can be evaluated: how should cash limits, volunteer capacity and uncertain demand determine a production plan? The next event would let me compare planned and actual production, costs, leftovers and net proceeds. This connects my economics and statistics background to optimization and decision evaluation in business analytics.
 
+## My next validation step
+
+At a future event, I would record production, actual unit costs, walk-up sales and leftovers, then compare my scenario assumptions with the observed outcome.
+
 ## Methods and records
 
 My workflow connects transcribed CSVs, SQLite reconciliation, Python scenario calculations, sensitivity checks, Streamlit and Excel.
@@ -57,6 +61,6 @@ Historical production, leftovers, walk-up sales and S26 costs are missing. I can
 
 The HTML page opens after downloading; GitHub displays its source. The spreadsheet and full local app provide additional ways to inspect the calculations.
 
-## Development note
+## AI-assisted development
 
-I used AI tools to support project development, including code and documentation.
+I used AI tools to support project development, including code and documentation. I take responsibility for the analytical choices and interpretations presented here, and I document the data, comparisons, assumptions and limitations behind my conclusions. I distinguish AI assistance during development from the models I actually implement; I describe those models in the methods rather than imply that I built an LLM-based system.
