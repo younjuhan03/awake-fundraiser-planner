@@ -38,7 +38,7 @@ I use the S25 cost of $190 / 108 purchased items as a proxy. Applying that earli
 
 ## What I learned and want to deepen
 
-I learned how confirmed pre-orders can anchor a production decision and how unit costs change the value of making extra food. My records supported transparent scenarios, but they did not give me enough evidence to estimate uncertain walk-up demand. I want to study demand estimation and constrained optimization more deeply, so I can connect cash limits, volunteer capacity and the risk of leftovers to a production plan I can evaluate.
+Working back through the fundraiser records helped me connect a familiar operating problem to a production model. I could calculate when extra items would break even, yet I lacked the walk-up sales and leftover records needed to estimate demand. Better demand estimation is the next skill I want to develop here, supported by consistent event-level recordkeeping.
 
 ## My next validation step
 
