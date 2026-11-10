@@ -1,11 +1,21 @@
 # AWAKE Fundraiser Planner
-### How much extra food should we make beyond confirmed pre-orders?
+### How much extra food should I make beyond confirmed pre-orders?
 
 **My finding:** under a historical cost proxy and an assumed $3.50 walk-up price, an extra item needs about 50.3% sell-through to cover its cost. At 50% sell-through, a 10% production buffer adds almost no net proceeds.
 
 As AWAKE's Finance/Social Leader, I introduced online pre-orders with day-of pickup to make food production easier to plan. Subsequent leaders continued that process after I left. I later used the available financial and order records to develop a reusable scenario planner.
 
 **Explore:** [interactive case study](index.html) · [spreadsheet planner](exports/fundraiser_planner.xlsx) · [my analysis](docs/case_study.md) · [calculation notes](docs/technical_notes.md)
+
+## My project in plain English
+
+I turned my experience organizing student food fundraisers into a planning question: **after I know my pre-orders, is making extra food worth the risk of leftovers?**
+
+- **What I built:** I connected the available order and financial records to a Python scenario model, a local app and an Excel planner.
+- **How I evaluated it:** I compared producing only confirmed orders with producing extra items, then varied the fraction of extra items sold.
+- **What I learned:** I found that selling half the extra items would roughly break even under my cost and price assumptions. I cannot treat a larger production buffer as an automatic increase in proceeds.
+
+I use **sell-through** to mean the fraction of extra items sold. I distinguish my earlier introduction of pre-orders from my later analytical planner.
 
 ## The production decision
 
